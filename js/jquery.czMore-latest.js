@@ -2,10 +2,10 @@
 Title: Cozeit More plugin by Yasir Atabani
 Documentation: na
 Author: Yasir O. Atabani
-Website: http://www.cozeit.com
+Website: https://yatabani.com
 Twitter: @yatabani
 
-MIT License, https://github.com/cozeit/czMore/blob/master/LICENSE.md
+MIT License, https://github.com/yatabani/czMore/blob/master/LICENSE.md
 */
 (function ($, undefined) {
     "use strict";
@@ -67,12 +67,10 @@ MIT License, https://github.com/cozeit/czMore/blob/master/LICENSE.md
                     }
                     var i = recordsetCount();
                     var item = recordset.clone().html();
-                    i++;
+
                     item = item.replace(/\[([0-9]\d{0})\]/g, "[" + i + "]");
                     item = item.replace(/\_([0-9]\d{0})\_/g, "_" + i + "_");
-                    //$(element).html(item);
-                    //item = $(item).children().first();
-                    //item = $(item).parent();
+                    i++;
 
                     obj.append(item);
                     loadMinus(obj.children().last());
@@ -105,7 +103,7 @@ MIT License, https://github.com/cozeit/czMore/blob/master/LICENSE.md
                 $(obj).children(".recordset").each(function (index, element) {
                    $(element).find('input:text, input:password, input:file, select, textarea').each(function(){
                         var old_name = this.name;
-                        var new_name = old_name.replace(/\_([0-9]\d{0})\_/g, "_" + (index + 1) + "_");
+                        var new_name = old_name.replace(/\_([0-9]\d{0})\_/g, "_" + index + "_");
                         this.id = this.name = new_name;
                         //alert(this.name);
                     });

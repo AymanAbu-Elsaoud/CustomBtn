@@ -2,10 +2,10 @@
 Title: Cozeit More plugin by Yasir Atabani
 Documentation: na
 Author: Yasir O. Atabani
-Website: http://www.cozeit.com
+Website: https://yatabani.com
 Twitter: @yatabani
 
-MIT License, https://github.com/cozeit/czMore/blob/master/LICENSE.md
+MIT License, https://github.com/yatabani/czMore/blob/master/LICENSE.md
 */
 (function ($, undefined) {
     $.fn.czMore = function (options) {
@@ -57,12 +57,10 @@ MIT License, https://github.com/cozeit/czMore/blob/master/LICENSE.md
                 obj.siblings("#btnPlus").click(function () {
                     var i = obj.children(".recordset").size();
                     var item = recordset.clone().html();
-                    i++;
+
                     item = item.replace(/\[([0-9]\d{0})\]/g, "[" + i + "]");
                     item = item.replace(/\_([0-9]\d{0})\_/g, "_" + i + "_");
-                    //$(element).html(item);
-                    //item = $(item).children().first();
-                    //item = $(item).parent();
+                    i++;
 
                     obj.append(item);
                     loadMinus(obj.children().last());
